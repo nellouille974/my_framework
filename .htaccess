@@ -1,0 +1,17 @@
+# Le serveur doit suivre les liens symboliques :
+Options +FollowSymlinks
+
+# Activation du module de réécriture d'URL :
+RewriteEngine on
+
+# Article sans numéro de page :
+#RewriteRule ^article-([0-9]+)-([0-9]+)\.html$   /articles/article.php?id=$1&rubrique=$2 [L]
+
+# Article avec numéro de page :
+#RewriteRule ^article-([0-9]+)-([0-9]+)-([0-9]+).html   /articles/article.php?id=$1&page=$2&rubrique=$3 [L]
+
+#RewriteRule ^index$ public/index.php?page=index [L]
+RewriteRule ^(.*)$ public/index.php?page=$1 [QSA]
+
+
+
